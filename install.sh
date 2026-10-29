@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-# 安装 copybridge：编译 → 装二进制 → 注册 LaunchAgent（用户级，无需 sudo）
+# 安装 vscode-copy-anywhere：编译 → 装二进制 → 注册 LaunchAgent（用户级，无需 sudo）
 set -euo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BIN_DIR="$HOME/.local/bin"
-BIN="$BIN_DIR/copybridge"
-PLIST="$HOME/Library/LaunchAgents/com.xhq.copybridge.plist"
-LABEL="com.xhq.copybridge"
-LOG="$HOME/Library/Logs/copybridge.log"
+BIN="$BIN_DIR/vscode-copy-anywhere"
+PLIST="$HOME/Library/LaunchAgents/com.xhq.vscode-copy-anywhere.plist"
+LABEL="com.xhq.vscode-copy-anywhere"
+LOG="$HOME/Library/Logs/vscode-copy-anywhere.log"
 
 echo "==> 编译"
-swiftc -O "$DIR/copybridge.swift" -o "$DIR/copybridge"
+swiftc -O "$DIR/vscode-copy-anywhere.swift" -o "$DIR/vscode-copy-anywhere"
 
 echo "==> 安装二进制到 $BIN"
 mkdir -p "$BIN_DIR" "$HOME/Library/LaunchAgents" "$HOME/Library/Logs"
-cp "$DIR/copybridge" "$BIN"
+cp "$DIR/vscode-copy-anywhere" "$BIN"
 chmod +x "$BIN"
 
 echo "==> 写入 LaunchAgent"

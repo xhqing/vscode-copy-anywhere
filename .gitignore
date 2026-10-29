@@ -4,5 +4,5 @@
 settings.local.json
 tmp/
 .DS_Store
-/copybridge
-copybridge-*
+/vscode-copy-anywhere
+vscode-copy-anywhere-*

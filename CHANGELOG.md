@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [未发布]
 
+### 变更（项目改名：copybridge → vscode-copy-anywhere）
+
+- **为什么改**：用户 2026-10-29 指出「名字不太好，时间久了我从名字看不出这个项目是做什么的」——`copybridge` 里的 `bridge` 是隐喻，而且完全没交代「VSCode」「文件」这两个关键信息，隔久了只记得「跟剪贴板有关」。新名 `vscode-copy-anywhere` 把「场景（VSCode）+ 动作（复制）+ 效果（任意处粘贴）」都写进名字。
+- **改了什么**：
+  1. 本地目录 `~/Developer/copybridge` → `~/Developer/vscode-copy-anywhere`；GitHub 仓库改名（旧地址自动重定向）。
+  2. 源文件 `copybridge.swift` → `vscode-copy-anywhere.swift`；编译产物、Release 产物（`vscode-copy-anywhere-<version>`）同名。
+  3. LaunchAgent label `com.xhq.copybridge` → `com.xhq.vscode-copy-anywhere`；安装路径 `~/.local/bin/copybridge` → `~/.local/bin/vscode-copy-anywhere`；日志 `~/Library/Logs/vscode-copy-anywhere.log`。
+  4. `install.sh` / `uninstall.sh` / `build.sh` / `.gitignore` / CI workflow 同步改名。
+  5. 中英双语 README：标题、正文自称、git clone 地址、安装与排错路径全部同步；首段「剪贴板小桥 / clipboard bridge」的比喻改成「后台小工具 / background helper」（新名字本身已说明用途，不再需要比喻）。
+  6. `assets/logo.svg`：标题文字改为新项目名（字号 52 → 32 以适配更长的名字），emoji `🌉`（桥）换成 `📋`（剪贴板），副标题保持；已跑 icon-design 的文字边界硬校验（PASS）。
+  7. 徽章：Visitors 徽章 URL 的 `traffic/badges/copybridge.json` 同步为 `vscode-copy-anywhere.json`。
+- **影响（需重新安装）**：旧 label `com.xhq.copybridge` 与旧二进制需先卸载，再跑一次 `./install.sh` 装新名字（否则新旧两套会同时跑）；本项目已在改动当天完成本机卸载 + 重装。
+- **版本**：本次为纯改名（chore 类），按 2026-10-13 发版门禁不 bump、不发版，`VERSION` 保持 0.1.1。
+
 ### 变更（`.pi` 由软链接改为真实目录 + 资源引用：全局规矩 2026-10-30 修订）
 
 - **为什么改**：2026-10-30 用户修订了子项目的智能体专属文件规则。旧形态把 `.pi` 整个挂成指向负责 Agent 的软链接，「共享」与「独占」被压在同一个符号上：子项目要放自己的配置时无处安放，硬写进 `.pi` 等于直接写进 Kit 的 Agent 项目——会瞬间影响 Kit 的全部兄弟子项目、并进 Agent 仓库的 git 历史。新规则分层：身份层（`AGENTS.md`）继续保持软链接一致（pi 的上下文文件没有 include 机制，超集只能靠复制、复制必然漂移）；能力层（`.pi/`）改在子项目里建真实目录，用 `settings.json` 以**路径引用** Agent 项目的资源目录，本地专属内容放自己的目录——行为上是超集，结构上无副本、不漂移，且子项目写自己的 `.pi` 不再污染 Agent 项目。

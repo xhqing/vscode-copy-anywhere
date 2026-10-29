@@ -23,11 +23,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Swift build
-        run: swiftc -O copybridge.swift -o /tmp/copybridge-ci
+        run: swiftc -O vscode-copy-anywhere.swift -o /tmp/vscode-copy-anywhere-ci
 
       - name: Version consistency (--version vs VERSION)
         run: |
-          SRC_VER="$(/tmp/copybridge-ci --version | awk '{print $2}')"
+          SRC_VER="$(/tmp/vscode-copy-anywhere-ci --version | awk '{print $2}')"
           FILE_VER="$(tr -d '[:space:]' < VERSION)"
           echo "source=$SRC_VER VERSION=$FILE_VER"
           [ "$SRC_VER" = "$FILE_VER" ] || { echo "版本号不一致"; exit 1; }

@@ -1,4 +1,4 @@
-// copybridge —— 让 VSCode 从资源管理器复制的文件可以直接粘贴到 Finder、微信等系统应用。
+// vscode-copy-anywhere —— 让 VSCode 从资源管理器复制的文件可以直接粘贴到 Finder、微信等系统应用。
 //
 // 背景：VSCode 复制文件时只写它自己的私有剪贴板格式 `code/file-list`，
 // 系统应用（Finder 等）不认识这个格式，所以「复制完粘到别处」没有反应。
@@ -10,9 +10,9 @@
 // 同时保留 VSCode 自己的 `code/file-list`，所以在 VSCode 内部的粘贴照旧可用。
 //
 // 用法：
-//   copybridge           常驻监听
-//   copybridge --once    只处理一次当前剪贴板然后退出（用于测试）
-//   copybridge --version 输出版本号
+//   vscode-copy-anywhere           常驻监听
+//   vscode-copy-anywhere --once    只处理一次当前剪贴板然后退出（用于测试）
+//   vscode-copy-anywhere --version 输出版本号
 
 import AppKit
 import Foundation
@@ -93,7 +93,7 @@ func bridgeClipboardOnce() -> Bool {
 }
 
 if CommandLine.arguments.contains("--version") {
-    print("copybridge \(version)")
+    print("vscode-copy-anywhere \(version)")
     exit(0)
 }
 
@@ -103,7 +103,7 @@ if runOnce {
     exit(0)
 }
 
-log("copybridge \(version) started (poll every \(pollInterval)s)")
+log("vscode-copy-anywhere \(version) started (poll every \(pollInterval)s)")
 var lastChangeCount = NSPasteboard.general.changeCount
 while true {
     Thread.sleep(forTimeInterval: pollInterval)
