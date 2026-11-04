@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [未发布]
 
+### 变更（移除访问量徽章，配合停用集中式流量采集）
+
+- **为什么改**：用户 2026-11-04 决定停用 xhqing 仓库的集中式访问量采集，同时不再在各仓库 README 展示访问量徽章。徽章的数据源必须由采集任务每天刷新，采集停掉之后徽章会冻结在旧值，而徽章文案写的是「Visits/day (14d)」——数字不再更新却仍显示成实时数据，留着反而误导读者。
+- **改了什么**：`README.md` / `README_cn.md` 顶部徽章区删除那一枚 shields.io 访问量徽章（整行删除，数据源 `https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/<仓库名>.json`）；License / Version / Type 等其它徽章与正文一个字未动。
+- **回归检查**：只删这一整行，徽章区所在的 `<p align="center">` / `<div>` 结构与相邻徽章不受影响；README 其余内容零改动。
+
 ### 变更（项目改名：copybridge → vscode-copy-anywhere）
 
 - **为什么改**：用户 2026-10-29 指出「名字不太好，时间久了我从名字看不出这个项目是做什么的」——`copybridge` 里的 `bridge` 是隐喻，而且完全没交代「VSCode」「文件」这两个关键信息，隔久了只记得「跟剪贴板有关」。新名 `vscode-copy-anywhere` 把「场景（VSCode）+ 动作（复制）+ 效果（任意处粘贴）」都写进名字。
