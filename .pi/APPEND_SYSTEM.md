@@ -1,6 +1,6 @@
-# vscode-copy-anywhere · 项目专属硬规则
+# vscode-copy-anywhere · 项目硬约束
 
-本文件由 pi 在 cwd 位于本仓库（或其 worktree）时自动追加进系统提示。**只写本项目特有的约定**；全局规则与 Kit 的身份来自仓库根的 `AGENTS.md` 软链接，这里不复述、也不覆盖。
+身份与角色见本仓库根 `AGENTS.md`；团队通用规则见全局 `~/.pi/agent/AGENTS.md`，此处不重述。
 
 ## 这是什么
 
