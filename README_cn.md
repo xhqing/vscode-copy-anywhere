@@ -87,6 +87,6 @@ bash uninstall.sh                                                  # 彻底移�
 
 ## 版权与署名
 
-Copyright (c) 2026 All Contributors。基于 [MIT License](LICENSE.md) 发布。
+Copyright (c) 2026 xhqing <https://github.com/xhqing>。基于 [MIT License](LICENSE.md) 发布。
 
 署名：使用或引用本项目时，请保留版权声明并注明来源：[vscode-copy-anywhere](https://github.com/xhqing/vscode-copy-anywhere)。
