@@ -87,6 +87,6 @@ bash uninstall.sh                                                  # remove enti
 
 ## License & Attribution
 
-Copyright (c) 2026 xhqing <https://github.com/xhqing>. Released under the [MIT License](LICENSE.md).
+Copyright (c) 2026 xhqing and contributors. Released under the [MIT License](LICENSE.md).
 
 Attribution: if you use or reference this project, please keep the copyright notice and credit the source: [vscode-copy-anywhere](https://github.com/xhqing/vscode-copy-anywhere).
