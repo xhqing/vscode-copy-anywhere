@@ -1,12 +1,12 @@
 # vscode-copy-anywhere
 
-> ExecutiveAssistantAgent（Kit）名下的子项目 · 本项目规则本体
+> assistant-agent（Kit）名下的子项目 · 本项目规则本体
 
 macOS 后台小工具：在 VSCode 资源管理器里 ⌘C 复制的文件，能直接粘到 Finder / 微信 / 浏览器等任意 App。Swift 单文件编译成常驻进程，由用户级 LaunchAgent 拉起。
 
 ## 归谁负责
 
-本项目由 **Kit**（ExecutiveAssistantAgent）负责维护。改动范围跨出本项目时，先向 Kit 说明，不自行扩张改动面。
+本项目由 **Kit**（assistant-agent）负责维护。改动范围跨出本项目时，先向 Kit 说明，不自行扩张改动面。
 
 ## 你的角色
 

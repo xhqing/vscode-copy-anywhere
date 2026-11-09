@@ -1,5 +1,10 @@
 # Changelog
 
+### 变更（Kit 项目更名为 assistant-agent，2026-11-09）
+
+- **为什么改**：Kit 的 Agent 项目 2026-11-09 由 `ExecutiveAssistantAgent` 更名为 `assistant-agent`——项目名只求「尽可能简单、能体现主要职责」，不再要求以 `Agent` 结尾；项目性质改由 `README.md` 的 `Type-AI Agent` 徽章判定，与名字无关。本仓库是 Kit 名下的子项目，`AGENTS.md` 的归属说明用旧名就会指错对象。
+- **改了什么**：`AGENTS.md` 两处指代（文件头「某 Agent 名下的子项目」与「归谁负责」段）由 `ExecutiveAssistantAgent（Kit）` 改为 `assistant-agent（Kit）`。
+
 All notable changes to this project will be documented in this file.
 
 ## [未发布]
